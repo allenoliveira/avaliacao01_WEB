@@ -1,12 +1,13 @@
 import React from 'react'
 
-export const Pessoa = ()=>{
+const Questao01A = ()=>{
     let name = "Mateus"
     let sobrenome = "Allen"
     let curso = "Redes de Computadores"  
 
     return (
         <div>
+        
             <h1>
             Nome : {name}
                     <br/>
@@ -15,10 +16,11 @@ export const Pessoa = ()=>{
             Curso : {curso}
                     <br/>
             </h1>
+        
         </div>
 
 
     )
 }
 
-export default Pessoa
+export default Questao01A

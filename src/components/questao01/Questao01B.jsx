@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Disciplinas = () => {
+const Questao01B = () => {
 
 let disciplina = ["WEB", "Projeto Integrado", "Redes de Alta Velocidade"]
 
@@ -10,11 +10,11 @@ disciplina.map(disciplina => (
 ))
     return(
         <div>
-               <h1>Disciplinas:</h1> {disciplina.map (disciplina => (
+               <h1>Disciplinas que estou matriculado :</h1> {disciplina.map (disciplina => (
                     <h2>{disciplina}</h2>
                  ))}
         </div>
     )
 }
 
-export default Disciplinas 
+export default Questao01B 

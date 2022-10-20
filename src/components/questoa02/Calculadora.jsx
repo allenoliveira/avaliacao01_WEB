@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from 'react'
+
+import React, {useState} from 'react'
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const Calcular = () => {
     
@@ -19,35 +21,39 @@ const Calcular = () => {
             setResultado(parseFloat(numero1) * parseFloat(numero2)) 
       }
 
-      useEffect(()=>{
-        setResultado(somar())
-    }, [numero1,numero2])
-
     return(
 
         <div>
-            <h1>Faça a sua Operação </h1>
-            <label>Valor 01: </label>
-            <input 
-            type="number"
-            valor={numero1}
-            onChange={(ms)=> setNumero1(ms.target.value)} />
+            <table className="table table-bordered table-dark">
+                <tr>
+                    <td>
+                    <h1>Faça a sua Operação </h1>
+                    <label>Valor 01: </label>
+                    <input 
+                    type="number"
+                    valor={numero1}
+                    onChange={(ms)=> setNumero1(ms.target.value)} />
+                
 
-            <label>Valor 02: </label>
-            <input 
-            type="number"
-            valor={numero1}
-            onChange={(ms)=> setNumero2(ms.target.value)} />
 
+                    <label>Valor 02: </label>
+                    <input 
+                    type="number"
+                    valor={numero1}
+                    onChange={(ms)=> setNumero2(ms.target.value)} />
+                    </td>
+                </tr>
+                <br/>
            <div>
-           <button onClick={somar} > + </button>
-           <button onClick={div} > / </button>
-           <button onClick={multi} > * </button>
-           <button onClick={subt} > - </button>
+           <button className='btn btn-danger' onClick={somar} > + </button>
+           <button className='btn btn-danger' onClick={div} > / </button>
+           <button className='btn btn-danger' onClick={multi} > * </button>
+           <button className='btn btn-danger' onClick={subt} > - </button>
            </div>
            <label>
             Resultado : {resultado}
            </label>
+           </table>
         </div>
                 )
 }

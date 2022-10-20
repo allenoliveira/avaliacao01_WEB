@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 // import { listaEstudante } from  './data'
 import axios from "axios"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const Pokemon = ()=> {
@@ -20,16 +21,39 @@ const Pokemon = ()=> {
              }
             }, [offset])
     
+
+            const Generate = ()=>{
+                return pokemon.map( 
+                    (desmep, index) => {
+                        desmep.key = index
+                        return(
+                            <tr>
+                                <td>
+                                    {desmep.name}
+                                </td>
+                            </tr>
+                        )
+                    }
+                )
+                }
+    
     return (
         <div>
-        <button  onClick={() => setOffset(prev => prev + 10)}></button>
-        <ul>
-            {pokemon.map(item => (
-        <li>
-            {item.name}
-        </li>
-        ))}
-        </ul>
+        <button className="btn btn-primary" onClick={() => setOffset(prev => prev + 10)}> Mostrar mais 10 Pokemons </button>
+        <table className="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th> Pokemons </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <center>
+                            {Generate()}
+                    </center>
+                </tr>
+            </tbody>
+        </table>
         </div>
     )
 }
